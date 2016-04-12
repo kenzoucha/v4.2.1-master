@@ -1,0 +1,67 @@
+<div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form class="login-form" name="form" ng-submit="register()" novalidate>
+        <div class="row">
+          <div class="input-field col s12 center">
+            <img src="../lib/images/loader.svg" alt="loader" ng-show="loader"/>
+            <alert-container info="info"></alert-container>
+            <h4>Register</h4>
+            <p class="center">Join to our community now !</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="username" type="text" name="username"ng-model="user.username" required minlength="5">
+            <label for="username" class="center-align">Username</label>
+            <div ng-messages="form.username.$error" class="alert" role="alert" ng-show="form.$submitted || form.username.$touched">
+              <div ng-message="required">Entrer un pseudo</div>
+              <div ng-message="minlength">Le pseudo doit contenir au muinimum 5 caractères</div>
+            </div>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-communication-email prefix"></i>
+            <input id="email" type="email" ng-model="user.email" name="email" required>
+            <label for="email" class="center-align">Email</label>
+            <div ng-messages="form.email.$error" class="alert" role="alert" ng-show="form.$submitted || form.email.$touched">
+              <div ng-message="required">Entrer un email</div>
+              <div ng-message="email">Entrer un email valide</div>
+            </div>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" type="password" ng-model="user.password" required name="password">
+            <label for="password">Password</label>
+            <div ng-messages="form.password.$error" role="alert" class="alert" ng-show="form.$submitted || form.password.$touched">
+              <div ng-message="required">Entrer un password</div>
+            </div>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password-again" type="password" ng-model="user.confPassword" required password-confirm="user.password" name="confPassword">
+            <label for="password-again">Password again</label>
+            <div ng-messages="form.confPassword.$error" role="alert" class="alert" ng-show="form.$submitted || form.confPassword.$touched">
+              <div ng-message="required">Entrer une confirmation Password</div>
+              <div ng-message="confirm">Confirmation Password</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <button class="btn waves-effect waves-light col s12" type="submit">Register Now</button>
+          </div>
+          <div class="input-field col s12">
+            <p class="margin center medium-small sign-up">Already have an account? <a ui-sref="login">Login</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+

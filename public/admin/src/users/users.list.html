@@ -1,0 +1,33 @@
+<h4>Listes Des clients</h4>
+<div class="card-panel">
+    <div class="input-field col s6" >
+        <i class="material-icons prefix">search</i>
+        <input type="text" class="validate" ng-model="byInput">
+    </div>
+    <table class="striped">
+        <thead>
+        <tr>
+            <th data-field="id" class="grey-text text-darken-2">Username</th>
+            <th data-field="name" class="grey-text text-darken-2">Email</th>
+            <th data-field="id" class="grey-text text-darken-2">Activated</th>
+            <th>Suppression</th>
+            <th data-field="id" class="grey-text text-darken-2" ng-if="!user.activated">&nbsp;</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="user in users | filter : byInput">
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <i class="small material-icons"  ng-if="!user.activated" style="color: #d9534f; font-size: 1.7em;">lock</i>
+                <i class="small material-icons" ng-if="user.activated" style="color: green; font-size: 1.5em;">verified_user</i></td>
+            <td><a ng-click="deletePerson(user._id)" href="" style="color: #d9534f;"><i class="material-icons">delete</i></a></td>
+            <td>
+                <button type="button" class="btn waves-effect waves-light" ng-click="activate(user._id,$index)" ng-if="!user.activated">Activate User</button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
