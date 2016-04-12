@@ -77,5 +77,30 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
                         }
                     }
                 }
-            });
+            })
+
+
+
+        .state('profile.edit', {
+            url: '/edit/{userId:[0-9a-z]{24}}',
+            authenticate: true,
+            views: {
+                'edit-view': {
+                    templateUrl: 'src/auth/profile.edit.html',
+                    controller: ['$scope', '$stateParams', 'utils', '$state', function ($scope, $stateParams, utils, $state) {
+                        $scope.focus = true;
+                        $scope.user = utils.findById($scope.users, $stateParams.userId);
+                        $scope.edituser= function () {
+                            $scope.user.id = $stateParams.userId;
+                            $scope.user.$update(function (data) {
+                                $scope.user = {};
+                                $scope.focus = false;
+                                $state.go('users.add.image', {userId: data._id});
+                            });
+                        }
+                    }]
+                }}} )
+
+        ;
+
     });

@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
     bcrypt = require('bcrypt-nodejs');
 
 var User = Schema({
+    images: String,
     username    :  String,
     email       :  String,
     password    :  String,

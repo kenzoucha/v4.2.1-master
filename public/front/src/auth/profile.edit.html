@@ -1,0 +1,30 @@
+<h4 class="header">Modifier compte</h4>
+<div class="card-panel" >
+    <form class="col s12" ng-submit="edituser()">
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="username" type="text" class="validate" ng-model="user.username">
+                <label ng-class="{active : focus == true}" for="username">username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="password" type="text" class="validate" ng-model="user.password">
+                <label ng-class="{active : focus == true}" for="password">password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="email" type="text" class="validate" ng-model="user.email">
+                <label ng-class="{active : focus == true}" for="email">email</label>
+            </div>
+        </div>
+        <button type="submit" class="btn pink" name="action">Enregister
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
+<div ui-view="user-image"></div>
