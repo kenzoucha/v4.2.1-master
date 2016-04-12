@@ -80,7 +80,6 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
             })
 
 
-
         .state('profile.edit', {
             url: '/edit/{userId:[0-9a-z]{24}}',
             authenticate: true,
@@ -101,6 +100,25 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
                     }]
                 }}} )
 
-        ;
+
+        .state('profile.edit',{
+            url: '/profile',
+            views: {
+                'profile-view': {
+
+                    templateUrl: 'src/auth/profile.edit.html',
+                    resolve: {
+                        "currentAuth": ["Auth",function(Auth){
+                            return Auth.session();
+                            console.log('hhhh');
+                        }]
+                    },
+                    controller: function ($scope,currentAuth,Auth,$state,$rootScope,categories) {
+                        console.log('hhhh');
+                        $scope.categories = categories.all();
+                            }
+            }
+        }});
+
 
     });

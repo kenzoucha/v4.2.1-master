@@ -31,17 +31,7 @@ angular.module('StockDeal.factories',[])
                     });
                 return deferred.promise;
             },
-            logout: function(){
-                var deferred = $q.defer();
-                $http.get(API.frontApi + '/logout')
-                    .success(function(feedback){
-                        deferred.resolve(feedback);
-                    })
-                    .error(function(error){
-                        deferred.reject(error);
-                    })
-                return deferred.promise;
-            }
+
         }
         return factory;
     }])
