@@ -71,23 +71,35 @@
     <header id="header2" class="page-topbar" ng-show="navShow">
         <!-- start header nav-->
         <div class="navbar-fixed">
-            <nav class="light-blue">
+            <nav class="light">
                 <div class="nav-wrapper">
                         <ul class="nav nav-list pull-left">
                             <li class="dropdown margin-left open">
                                 <a class="dropdown-toggle padding-left-no padding-left-no" data-toggle="dropdown" aria-expanded="true">
                                    </a>
                             </li>
-                            <li><a ui-sref="edit"><i class="material-icons light">account_circle</i>change photo</a>
+                            <li><a ui-sref="edit"><i class="material-icons light">account_circle</i></a>
 </li>
 
                         </ul>
 
                 </div>
+                <div class="box">
+                    <div >
+                        <i class="material-icons icon">perm_identity</i>
+                    </div>
+                    <ul class="list">
+                        <li><a href="#what"><i class="material-icons">account_box</i>profile settings</a></li>
+                        <li><a href="#its"><i class="material-icons">account_box</i>upload photo</a></li>
+                        <li><a href="#that"><i class="material-icons ">input</i>Logout</a></li>
+
+                    </ul>
+                </div>
             </nav>
 
         <!-- end header nav-->
         </div>
+
     </header>
 
     <div class="container">
@@ -128,16 +140,6 @@
 </body>
 <script>
 
-    $('.dropdown-button').dropdown({
-                inDuration: 300,
-                outDuration: 225,
-                constrain_width: false, // Does not change width of dropdown to that of the activator
-                hover: true, // Activate on hover
-                gutter: 0, // Spacing from edge
-                belowOrigin: false, // Displays dropdown below the button
-                alignment: 'left' // Displays dropdown with edge aligned to the left of button
-            }
-    );
     // @nodws
     (function() {
         $(".icon").on('click', function() {
@@ -148,6 +150,7 @@
 
 
     }).call(this);
+
 
 </script>
 </html>
