@@ -26,8 +26,7 @@ module.exports = function(router,passport) {
          });
     router
         .get('/session', function(req, res){
-
-            console.log(req.session);
+            //console.log(req);
             res.send({'auth': req.isAuthenticated()});
         })
     router

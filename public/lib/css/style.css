@@ -4,7 +4,8 @@ body {
 }
 #main,
 footer {
-  padding-left: 240px;
+  text-align: center;
+
 }
 .margin {
   margin: 0;

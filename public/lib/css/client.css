@@ -150,3 +150,29 @@ nav ul a {
 .light{
     color: #ffffff; !important;
 }
+
+.nav {
+    margin: 0;
+}
+.nav .a, .nav a {
+    min-height: 64px;
+}
+.avatar-sm {
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+}
+
+nav ul.nav-avatar li {
+    width: 100%;
+}
+
+#login-page {
+    width: 300px;
+    margin: 20px auto;
+}
+
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 64px !important;
+    line-height: 64px !important;
+}
