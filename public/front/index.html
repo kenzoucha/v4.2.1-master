@@ -38,6 +38,7 @@
     <script src="src/factories.js"></script>
     <script src="src/directories/directives.js"></script>
     <script src="../lib/AngularJS-Toaster/toaster.min.js"></script>
+    <link rel="stylesheet" href="../lib/css/client.css"/>
 </head>
 
 <body>
@@ -45,7 +46,7 @@
     <header id="header" class="page-topbar" ng-show="navShow">
         <!-- start header nav-->
         <div class="navbar-fixed">
-            <nav class="cyan">
+            <nav class="white">
                 <div class="nav-wrapper">
                     <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><span class="logo-text">StockDeal</span></a></h1>
                     <ul class="right hide-on-med-and-down">
@@ -55,18 +56,38 @@
                         <li>
                             <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>
                         </li>
-                        <li><a href="" class="waves-effect waves-block waves-light toggle-favorite"><i class="material-icons">favorite</i></a>
+                        <li><a href="" class="waves-effect waves-block waves-black"><i class="material-icons">favorite</i></a>
                         </li>
-                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="material-icons">shopping_cart</i></a>
-                        </li>
-                        <li><a ui-sref="profile.edit" class="waves-effect waves-block waves-light"><i class="material-icons">account_circle</i>change photo</a>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="material-icons">&#xE8CC;</i></a>
                         </li>
 
                     </ul>
                 </div>
             </nav>
+
         </div>
         <!-- end header nav-->
+    </header>
+    <header id="header2" class="page-topbar" ng-show="navShow">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="light-blue">
+                <div class="nav-wrapper">
+                        <ul class="nav nav-list pull-left">
+                            <li class="dropdown margin-left open">
+                                <a class="dropdown-toggle padding-left-no padding-left-no" data-toggle="dropdown" aria-expanded="true">
+                                   </a>
+                            </li>
+                            <li><a ui-sref="edit"><i class="material-icons light">account_circle</i>change photo</a>
+</li>
+
+                        </ul>
+
+                </div>
+            </nav>
+
+        <!-- end header nav-->
+        </div>
     </header>
 
     <div class="container">
@@ -80,9 +101,24 @@
             </div>
         </div>
     </div>
-
-    <footer class="page-footer">
-        <div class="footer-copyright">
+    <footer class="page-footer light-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col 10 s6">
+                    <h5 class="white-text"></h5>
+                    <p class="grey-text text-lighten-4">Suivez-nous.</p>
+                    <div id="world-map-markers"></div>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text"></h5>
+                    <p class="grey-text text-lighten-4">Contactez-nous.</p>
+                    <div id="polar-chart-holder">
+                        <canvas id="polar-chart-country" width="100"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright light-blue">
             <div class="container">
                 Copyright © 2016 </a> All rights reserved.
                 <span class="right"> Design and Developed by StockDeal</a></span>
@@ -90,4 +126,28 @@
         </div>
     </footer>
 </body>
+<script>
+
+    $('.dropdown-button').dropdown({
+                inDuration: 300,
+                outDuration: 225,
+                constrain_width: false, // Does not change width of dropdown to that of the activator
+                hover: true, // Activate on hover
+                gutter: 0, // Spacing from edge
+                belowOrigin: false, // Displays dropdown below the button
+                alignment: 'left' // Displays dropdown with edge aligned to the left of button
+            }
+    );
+    // @nodws
+    (function() {
+        $(".icon").on('click', function() {
+            $(this).toggleClass('active');
+            $('.box').toggleClass('active');
+            return $('.tap').addClass('active');
+        });
+
+
+    }).call(this);
+
+</script>
 </html>
