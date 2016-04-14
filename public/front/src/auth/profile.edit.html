@@ -1,30 +1,63 @@
-<h4 class="header">Modifier compte</h4>
-<div class="card-panel" >
-    <form class="col s12" ng-submit="edituser()">
+<h4 class="header">Mon Compte</h4>
+<h2 class="header"> Mon Profile</h2>
+<div class="col s12 z-depth-4 card-panel">
+    <form class="col s6" ng-submit="edituser()">
         <div class="row">
             <div class="input-field col s6">
-                <i class="material-icons prefix">mode_edit</i>
-                <input id="username" type="text" class="validate" ng-model="user.username">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="username" type="text" class="validate" >
                 <label ng-class="{active : focus == true}" for="username">username</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <i class="material-icons prefix">mode_edit</i>
-                <input id="password" type="text" class="validate" ng-model="user.password">
+                <i class="material-icons prefix">lock</i>
+                <input id="password" type="text" class="validate" >
                 <label ng-class="{active : focus == true}" for="password">password</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <i class="material-icons prefix">mode_edit</i>
-                <input id="email" type="text" class="validate" ng-model="user.email">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="text" class="validate" >
                 <label ng-class="{active : focus == true}" for="email">email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate" >
+                <label for="icon_telephone">phone</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+
+                <i class="material-icons prefix">date_range</i>
+                <label>birthdate</label>
+                <input type="date" class="datepicker">
+
             </div>
         </div>
         <button type="submit" class="btn pink" name="action">Enregister
             <i class="material-icons right">send</i>
         </button>
     </form>
+
 </div>
-<div ui-view="user-image"></div>
+<script>
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+</script>
+<h2 class="header"> Mon Carnet D'ADRESSES </h2>
+<div class="col s12 z-depth-4 card-panel">
+    <div class="row">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">mode_edit</i>
+            <input type="text" class="validate" >
+            <label ng-class="{active : focus == true}" for="password">ville</label>
+        </div>
+    </div>
+</div>
