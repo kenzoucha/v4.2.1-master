@@ -52,4 +52,15 @@ module.exports = function(router) {
                 });
         })
 
+    router
+        .get('/getUsers', function(req, res){
+            User
+                .find()
+                .where('activated').equals(false)
+                .exec(function (error, users) {
+                    res.send(200,users.length);
+                });
+          //  res.send({'count': req.isAuthenticated()});
+        })
+
 }

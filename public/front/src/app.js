@@ -28,3 +28,5 @@ angular.module('StockDeal',[
             });
         $urlRouterProvider.otherwise('login');
     })
+
+//hideLoader = function(){ console.log(":::::::::"); $("#loader-wrapper").hide();}

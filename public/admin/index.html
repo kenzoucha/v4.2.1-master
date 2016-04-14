@@ -32,11 +32,13 @@
 
 
 </head>
-<body ng-model="auth">
+<body >
 
 <nav ng-show="auth">
     <ul class="right">
+        <li><a ui-sref="users.list"><i  class="material-icons">person_pin</i><span id="countUser" >0</span></a>
         <li><a ui-sref="logout"><i class="material-icons">input</i></a></li>
+        </li>
     </ul>
     <ul id="slide-out" class="side-nav ">
         <li><a href="#!">StockDeal</a></li>

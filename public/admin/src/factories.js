@@ -33,5 +33,22 @@ angular.module('StockDeal.factories',[])
             }
         };
         return factory;
-    }]);
+    }])
+    .factory('countUser',['$http','API', '$q', function($http,API,$q){
+    var factory = {
+
+        count: function(){
+            var deferred = $q.defer();
+            $http.get(API.adminApi + '/getUsers')
+                .success(function(data){
+                    $("#countUser").html(data);
+                    deferred.resolve(data);
+                }).error(function(err){
+                deferred.reject(err);
+            })
+            return deferred.promise;
+        }
+    };
+    return factory;
+}])
 

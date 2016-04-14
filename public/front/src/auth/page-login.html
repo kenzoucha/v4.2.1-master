@@ -1,6 +1,11 @@
-
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+</div>
 <div class="cyan">
-<div id="login-page" class="row">
+
+  <div id="login-page" class="row" onload="hideLoader()">
     <div class="col s12 z-depth-4 card-panel">
       <form class="login-form" ng-submit="login()">
 

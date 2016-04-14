@@ -7,6 +7,8 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
                     'login-view': {
                         templateUrl: 'src/auth/page-login.html',
                         controller: function($scope,Auth,toaster,$timeout,$state,$rootScope){
+
+
                             $scope.user = {};
                             $scope.login = function(){
                                 $rootScope.navShow = false;
@@ -40,6 +42,7 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
                                         $scope.loader = false;
                                         $scope.info = data;
                                         $interval(function(){
+                                            toaster.pop(data.status, null,data.message);
                                             $scope.info = false;
                                         },5000)
                                         $scope.user = {};
@@ -79,7 +82,21 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
                 }
             })
 
+            .state('logout',{
+                url: '/logout',
+                authenticate: true,
+                views: {
+                    'home-view': {
+                        controller: function(Auth,toaster,$state,$rootScope){
+                            Auth.logout().then(function(data){
+                                toaster.pop(data.status, null,data.message);
+                                $state.transitionTo('login');
+                            });
+                        }
+                    }
 
+                }
+            })
 
 
 

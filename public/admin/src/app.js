@@ -19,16 +19,22 @@ angular.module('StockDeal',[
 .constant('API',{
         adminApi: '/api/admin'
 })
-.run(function($rootScope, $state, Auth){
+.run(function($rootScope, $state, Auth, countUser){
     $rootScope.$on('$stateChangeStart', function(event, toState){
         Auth.session().then(function(data){
             $rootScope.auth = data.auth;
+
+            userNumber=countUser.count();
+
+           // $rootScope.auth = false;
             if(toState.authenticate && !data.auth){
                 $state.transitionTo('login');
                 event.preventDefault();
             }
         })
     })
+
+
 })
 .config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){
 
