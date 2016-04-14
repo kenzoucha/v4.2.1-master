@@ -90,8 +90,24 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
 
                     templateUrl: 'src/auth/profile.edit.html',
 
-        }}}
-        );
+        }}})
+        .state('adress',{
+            url: '/adress',
+            views: {
+                'adress-view': {
 
+                    templateUrl: 'src/auth/adress.html',
+
+                }}}
+        )
+        .state('add-image',{
+            url: '/image',
+            views: {
+                'image-view': {
+
+                    templateUrl: 'src/auth/add-image.html',
+
+                }}}
+        );
 
     });
