@@ -37,8 +37,8 @@ module.exports = function(router) {
                             from: '"Kenza" <kenza@gmail.com>',
                             to: u.email,
                             subject: 'Activation Compte ',
-                            text: 'Votre compte a bien été activé ',
-                            html: '<b>Votre compte a bien été activé</b> <a href="http://localhost:3000/front/#/login">cliquez ici</a>'
+                            text: 'Votre compte a  été activé ',
+                            html: '<b>Votre compte a été activé</b> <a href="http://localhost:3000/front/#/login">cliquez ici</a>'
                         };
 
                         transporter.sendMail(mailOptions, function(error, info){
@@ -47,7 +47,7 @@ module.exports = function(router) {
                             }
                             console.log('Message sent: ' + info.response);
                         });
-                        return res.send(200, {status: 'success', message: 'le compte a bien été activé', user: u});
+                        return res.send(200, {status: 'success', message: 'le compte a  été activé', user: u});
                     })
                 });
         })

@@ -20,6 +20,7 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
                                             $state.transitionTo('account');
                                         }, function(error){
                                             $scope.loader = false;
+
                                             console.log(error);
 
                                         })
@@ -125,6 +126,16 @@ angular.module('StockDeal.auth',['ui.router','ngMessages'])
                     templateUrl: 'src/auth/add-image.html',
 
                 }}}
-        );
+        )
+
+        .state('messagerie',{
+            url: '/messagerie',
+            views: {
+                'messagerie-view': {
+
+                    templateUrl: 'src/auth/messagerie.html',
+
+                }}}
+        )
 
     });

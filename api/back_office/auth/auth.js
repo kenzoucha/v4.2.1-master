@@ -15,7 +15,7 @@ module.exports = function(router,passport) {
                             return res.send({status: 'error', message: 'impossible de se connecter'});
                         }
                         console.log(req.session);
-                        return res.send({status: 'success', message: 'vous ete bien connecté', admin: req.user});
+                        return res.send({status: 'success', message: 'vous ete connecté', admin: req.user});
                     })
                 }
             })(req,res);

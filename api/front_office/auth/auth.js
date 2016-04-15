@@ -8,14 +8,14 @@ module.exports = function(router,passport) {
         .post('/login',function (req, res) {
             passport.authenticate('local-login-front', function(err, user, info){
                 if(!user) {
-                    return res.send(401,{status: 401, message: 'Impossible de se connecter'});
+                    return res.send(401,{status: 'error', message: 'Impossible de se connecter'});
                 }
                 else{
                     req.logIn(user, function(err){
                         if(err){
-                            return res.send({status: 'error', message: 'Impossible de se connecter'});
+                            return res.send({status: 'error', title:'information',message: 'Impossible de se connecter'});
                         }
-                        return res.send({status: 'success', message: 'Vous ete bien connecté'});
+                        return res.send({status: 'success', message: 'Vous ete connecté'});
                     });
                 }
             })(req,res);
@@ -27,7 +27,7 @@ module.exports = function(router,passport) {
                         return res.send({status: 'info', title: 'Information', message: 'Ce compte existe deja'});
                     }
                     else{
-                        return res.send({status: 'success', title: 'Inscription', message: 'Vous ete bien inscrit . L\' activiation est prevu dans 24 heures'});
+                        return res.send({status: 'success', title: 'Inscription', message: 'Votre ete inscrit   . L\' activiation est prevu dans 24 heures'});
                     }
                 })(req,res);
          });

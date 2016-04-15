@@ -46,12 +46,12 @@
     <script src="src/directories/directives.js"></script>
     <script src="../lib/AngularJS-Toaster/toaster.min.js"></script>
 
-    <script src="http://daemonite.github.io/material/js/base.min.js"></script>
-
+    <script src="../lib/js/base.min.js"></script>
+ 
     <link rel="stylesheet" href="../lib/css/client.css"/>
 </head>
 
-<body>
+<body ng-model="navShow">
 
     <header id="header" class="page-topbar" ng-show="navShow">
 
@@ -71,7 +71,7 @@
                         </li>
                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="material-icons">&#xE8CC;</i></a>
                         </li>
-
+                        <li><a ui-sref="messagerie"><i  class="material-icons">info</i></a>
                     </ul>
                 </div>
             </nav>
@@ -136,6 +136,7 @@
                 <div ui-view="profile-view"></div>
                 <div ui-view="adress-view"></div>
                 <div ui-view="image-view"></div>
+                <div ui-view="messagerie-view"></div>
             </div>
         </div>
     </div>
