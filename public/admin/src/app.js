@@ -1,6 +1,5 @@
 angular.module('StockDeal',[
     'StockDeal.products',
-        'StockDeal.repondre',
     'StockDeal.products.service',
     'StockDeal.categories',
     'StockDeal.categories.service',
