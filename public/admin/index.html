@@ -37,7 +37,7 @@
 <nav ng-show="auth">
     <ul class="right">
         <li><a ui-sref="users.list"><i  class="material-icons">person_pin</i><span id="countUser" >0</span></a>
-        <li><a ui-sref="messagerie"><i  class="material-icons">message</i></a>
+        <li><a ui-sref="repondre"><i  class="material-icons">message</i></a>
         <li><a ui-sref="logout"><i class="material-icons">input</i></a></li>
         </li>
     </ul>
@@ -110,6 +110,7 @@
         <ui-view name="edit-view"></ui-view>
         <ui-view name="addper-view"></ui-view>
         <ui-view name="lock-view"></ui-view>
+        <ui-view name="repondre-view"></ui-view>
     </script>
     <script id="templates/login.html" type="text/ng-template">
         <div id="login-page" class="row">
@@ -167,6 +168,9 @@
 <script src="src/scategories/scategories.js"></script>
 <script src="src/scategories/scategories-service.js"></script>
 <script src="src/users/users.js"></script>
+
+<script src="src/messagerie/repondre.js"></script>
+
 
 <script src="src/common/utils-service.js"></script>
 <script src="src/controllers.js"></script>

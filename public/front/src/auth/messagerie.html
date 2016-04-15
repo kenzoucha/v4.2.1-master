@@ -11,19 +11,23 @@
                 </div>
                 <div class="row margin">
                     <div class="input-field col s12">
-                        <i class="mdi-action-lock-outline prefix">email</i>
+                        <i class="mdi-communication-email prefix"></i>
                         <input id="email" type="password" ng-model="user.email">
                         <label for="email">email</label>
                     </div>
                 </div>
                 <div class="row margin">
                     <div class="input-field col s12">
-                        <i class="mdi-action-lock-outline prefix">Sujet</i>
-                        <input id="Sujet" type="text">
-                        <label for="email">Sujet</label>
+                        <i class="mdi-communication-message prefix"></i>
+                        <textarea id="message" class="materialize-textarea"></textarea>
+                        <label for="message">message</label>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="input-field col s12">
+                        <a href="" class="btn waves-effect waves-teal col s12">Envoyer</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
