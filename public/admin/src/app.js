@@ -6,6 +6,7 @@ angular.module('StockDeal',[
     'StockDeal.scategories',
     'StockDeal.scategories.service',
     'StockDeal.users',
+
     'StockDeal.utils.service',
     'StockDeal.controllers',
     'StockDeal.directives',

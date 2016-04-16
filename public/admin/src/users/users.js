@@ -37,28 +37,21 @@ angular.module('StockDeal.users',['ui.router'])
                 }
             })
     })
-    .factory('User',['$http','API', '$q', function($http,API,$q){
-        var factory = {
-            list: function(){
-                var deferred = $q.defer();
-                $http.get(API.adminApi + '/user')
-                    .success(function(data){
-                        deferred.resolve(data);
-                    }).error(function(err){
-                        deferred.reject(err);
-                    })
-                return deferred.promise;
-            },
-            update: function(id){
-                var deferred = $q.defer();
-                $http.put(API.adminApi + '/user/'+id)
-                    .success(function(data){
-                        deferred.resolve(data);
-                    }).error(function(err){
-                        deferred.reject(err);
-                    })
-                return deferred.promise;
-            }
-        };
+angular.module('StockDeal.fournisseurs.service',[])
+    .factory('fournisseurs',['$resource','API', function($resource,API){
+        var Fourni = $resource(API.adminApi + '/fourni/:_id',null,{
+            'update': {method: 'PUT', params: {_id: '@_id'}}
+        });
+        var factory = {};
+        factory.all = function(){
+            return Fourni.query();
+        }
+        factory.get = function(id){
+            return Fourni.get(id);
+        }
+        factory.fourni = Fourni;
+
         return factory;
+
+
     }]);

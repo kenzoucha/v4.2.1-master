@@ -91,11 +91,13 @@
                             <div class="collapsible-body">
                                 <ul class="collapsible collapsible-accordion">
                                     <li><a ui-sref="users.list">Listes comptes</a></li>
+                                    <li><a ui-sref="fournisseurs-list">Listes fournisseur</a></li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </li>
     </ul>
@@ -111,6 +113,7 @@
         <ui-view name="addper-view"></ui-view>
         <ui-view name="lock-view"></ui-view>
         <ui-view name="repondre-view"></ui-view>
+        <ui-view name="four-list-view"></ui-view>
     </script>
     <script id="templates/login.html" type="text/ng-template">
         <div id="login-page" class="row">
@@ -169,9 +172,8 @@
 <script src="src/scategories/scategories-service.js"></script>
 <script src="src/users/users.js"></script>
 
+
 <script src="src/messagerie/repondre.js"></script>
-
-
 <script src="src/common/utils-service.js"></script>
 <script src="src/controllers.js"></script>
 <script src="src/directives.js"></script>

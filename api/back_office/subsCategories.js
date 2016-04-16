@@ -1,5 +1,5 @@
 var subCategory = require('../models/subCategory');
-
+var Category = require('../models/Category');
 module.exports = function(router) {
     router
         .route('/scategory')
